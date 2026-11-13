@@ -128,7 +128,12 @@ def ask(query: str, profile: Optional[Dict[str, Any]] = None, top_k: int = 4, lo
         except Exception as exc:  # fall back gracefully on any API/parse error
             result = _fallback_answer(query, profile, sources)
             result["mode"] = "fallback"
-            result["_fallback_reason"] = f"AI call failed ({type(exc).__name__}); showing offline demo answer."
+            detail = str(exc).strip().replace("\n", " ")
+            if len(detail) > 180:
+                detail = detail[:180] + "…"
+            result["_fallback_reason"] = (
+                f"AI call failed ({type(exc).__name__}): {detail} — showing offline demo answer."
+            )
     else:
         result = _fallback_answer(query, profile, sources)
         result["mode"] = "fallback"
@@ -156,12 +161,30 @@ def _ask_claude(query: str, profile: Optional[Dict[str, Any]], sources: List[Dic
         f"Respond with the JSON object described in the system instructions. "
         f"The answer field should be written in the user's preferred language."
     )
-    message = client.messages.create(
-        model=config.anthropic_model(),
-        max_tokens=1500,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_msg}],
-    )
+    # Try the configured model first, then widely-available fallbacks if the
+    # configured one returns "model not found" (404). Other errors (auth,
+    # overloaded, etc.) are raised immediately — retrying other models won't help.
+    not_found = getattr(anthropic, "NotFoundError", None)
+    last_not_found: Optional[Exception] = None
+    message = None
+    for model_name in config.candidate_models():
+        try:
+            message = client.messages.create(
+                model=model_name,
+                max_tokens=1500,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            break
+        except Exception as exc:  # noqa: BLE001
+            is_not_found = (not_found is not None and isinstance(exc, not_found)) or "not_found" in str(exc).lower()
+            if is_not_found:
+                last_not_found = exc
+                continue
+            raise
+    if message is None:
+        raise last_not_found or RuntimeError("No usable Claude model found for this API key.")
+
     text = "".join(block.text for block in message.content if getattr(block, "type", "") == "text")
     return _parse_json_response(text, sources)
 

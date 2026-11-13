@@ -45,8 +45,29 @@ def anthropic_api_key() -> str:
     return os.environ.get("ANTHROPIC_API_KEY", "").strip()
 
 
+# Widely-available fallback models tried, in order, if the configured model
+# returns a "model not found" (404) error. These are stable, broadly-accessible
+# IDs so the live assistant keeps working even if ANTHROPIC_MODEL is set to a
+# model the account can't access.
+FALLBACK_MODELS = [
+    "claude-3-5-sonnet-latest",
+    "claude-3-5-sonnet-20241022",
+    "claude-3-5-haiku-latest",
+]
+
+
 def anthropic_model() -> str:
     return os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5").strip() or "claude-sonnet-4-5"
+
+
+def candidate_models() -> list:
+    """The configured model first, then the fallbacks (de-duplicated)."""
+    primary = anthropic_model()
+    chain = [primary]
+    for m in FALLBACK_MODELS:
+        if m not in chain:
+            chain.append(m)
+    return chain
 
 
 def ai_enabled() -> bool:
