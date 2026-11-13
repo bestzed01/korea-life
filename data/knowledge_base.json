@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "name": "KOREA-LIFE curated knowledge base",
+    "description": "A small, hand-curated set of records pointing to official South Korean government sources for foreign residents. Summaries are intentionally high-level and conservative. They describe what each official source covers and how to reach it. They do NOT state visa rules, eligibility, requirements, fees, or legal deadlines, which change frequently and must be confirmed with the official source itself.",
+    "disclaimer": "This knowledge base is a navigation aid, not legal, immigration, labor, healthcare, or financial advice. Always verify specifics on the official site or by calling the official helpline before acting.",
+    "schema_version": "1.0",
+    "last_reviewed": "2026-11-13"
+  },
+  "sources": [
+    {
+      "id": "HIKOREA",
+      "title": "HiKorea — Electronic Government for Foreigners",
+      "issuer": "Korea Immigration Service, Ministry of Justice",
+      "topic": ["immigration", "visa", "residence card", "alien registration", "reentry", "appointment booking", "stay extension"],
+      "geography": "National (South Korea)",
+      "url": "https://www.hikorea.go.kr/",
+      "verified_summary": "HiKorea is the official online portal of the Korea Immigration Service for foreign nationals in South Korea. It is the place to book immigration office visit reservations, submit certain civil applications online (such as extension of stay and change/addition of status where eligible), and check notices related to immigration procedures. The portal offers an English interface. Use it to find your local immigration office and to make an appointment rather than walking in.",
+      "excerpts": [
+        "Official electronic-government portal operated by the Korea Immigration Service for foreigners in Korea.",
+        "Provides online reservation for immigration office visits and selected online civil applications."
+      ],
+      "languages": ["en", "ko"],
+      "escalation_contact": "Immigration Contact Center 1345 (dial 1345 within Korea)",
+      "last_checked": "2026-11-13"
+    },
+    {
+      "id": "MOJ1345",
+      "title": "Immigration Contact Center 1345 — Ministry of Justice",
+      "issuer": "Ministry of Justice, Korea Immigration Service",
+      "topic": ["immigration", "visa", "legal", "helpline", "interpretation", "counseling"],
+      "geography": "National (South Korea)",
+      "url": "https://moj.go.kr/immigration_eng/1862/subview.do",
+      "verified_summary": "1345 is the Ministry of Justice Immigration Contact Center, a telephone helpline for foreign residents with questions about immigration and stay in Korea. It provides counseling and offers interpretation in multiple foreign languages. Dial 1345 from within Korea (without an area code). Use it for authoritative, case-specific answers about immigration procedures, since rules depend on your individual status and circumstances.",
+      "excerpts": [
+        "1345 Immigration Contact Center provides immigration counseling for foreigners.",
+        "Multilingual interpretation services are available through the center."
+      ],
+      "languages": ["en", "ko", "ru", "uz", "zh", "vi", "other"],
+      "escalation_contact": "Dial 1345 (Immigration Contact Center) within Korea",
+      "last_checked": "2026-11-13"
+    },
+    {
+      "id": "GOV24FOREIGN",
+      "title": "Government24 — Services for Foreigners",
+      "issuer": "Ministry of the Interior and Safety",
+      "topic": ["civil documents", "certificates", "government services", "e-government", "residence", "family"],
+      "geography": "National (South Korea)",
+      "url": "https://foreigner.gov.kr/",
+      "verified_summary": "Government24 is South Korea's integrated online government services portal. Its foreigner service points foreign residents to civil administration services and the issuance of certain official documents and certificates online. Use it as a starting point to locate a government service and understand which agency handles it. Availability of specific online services can depend on your registration status and authentication method.",
+      "excerpts": [
+        "Integrated government service portal of the Republic of Korea.",
+        "Foreigner section guides non-nationals to civil services and document issuance."
+      ],
+      "languages": ["en", "ko"],
+      "escalation_contact": "Government24 help / local community service center (jumin center)",
+      "last_checked": "2026-11-13"
+    },
+    {
+      "id": "NHIS_FOREIGN",
+      "title": "National Health Insurance Service — Guidance for Foreigners",
+      "issuer": "National Health Insurance Service (NHIS)",
+      "topic": ["health insurance", "healthcare", "premiums", "coverage", "NHIS", "billing"],
+      "geography": "National (South Korea)",
+      "url": "https://www.nhis.or.kr/english/wbheaa02900m01.do",
+      "verified_summary": "The National Health Insurance Service (NHIS) operates South Korea's national health insurance. Its English guidance explains how national health insurance applies to foreign residents, including the general concepts of mandatory enrollment for qualifying residents, premium billing, and coverage. Your specific enrollment status, premium amount, and bill due date are individual and appear on your own NHIS notices. Confirm your personal premium and due date with NHIS rather than assuming a universal figure or date.",
+      "excerpts": [
+        "NHIS provides national health insurance information for foreign residents in English.",
+        "Enrollment, premium, and coverage details depend on the individual resident's circumstances."
+      ],
+      "languages": ["en", "ko"],
+      "escalation_contact": "NHIS Foreigner helpline 033-811-2000 (English available)",
+      "last_checked": "2026-11-13"
+    },
+    {
+      "id": "MOEL1350",
+      "title": "Ministry of Employment and Labor — 1350 Labor Counseling",
+      "issuer": "Ministry of Employment and Labor (MOEL)",
+      "topic": ["labor", "employment", "wages", "contracts", "working conditions", "workplace rights", "helpline"],
+      "geography": "National (South Korea)",
+      "url": "https://1350.moel.go.kr/",
+      "verified_summary": "1350 is the Ministry of Employment and Labor's counseling service for questions about labor and employment in Korea, such as employment contracts, wages, working hours, and workplace rights. Dial 1350 from within Korea. It is the appropriate official channel for workers, including foreign workers, who have questions or complaints about their working conditions or a dispute with an employer.",
+      "excerpts": [
+        "1350 provides labor-related counseling operated by the Ministry of Employment and Labor.",
+        "Covers employment contracts, wages, working hours, and workplace matters."
+      ],
+      "languages": ["en", "ko", "other"],
+      "escalation_contact": "Dial 1350 (Labor Counseling) within Korea",
+      "last_checked": "2026-11-13"
+    },
+    {
+      "id": "SEOUL_FOREIGN",
+      "title": "Seoul Global Center / Seoul Foreign Resident Portal",
+      "issuer": "Seoul Metropolitan Government",
+      "topic": ["local services", "living in seoul", "counseling", "community", "orientation", "housing", "daily life"],
+      "geography": "Seoul Metropolitan City",
+      "url": "https://global.seoul.go.kr/hmpg/main/main.do?lang=en",
+      "verified_summary": "The Seoul Metropolitan Government's foreign resident portal gathers living information and support services for foreign residents of Seoul, including guidance on daily life, local counseling, and community programs offered through Seoul Global Centers. It is Seoul-specific; residents of other cities or provinces should look for their own local government's foreign-resident support office. Use it for help settling into life in Seoul and for referrals to local in-person support.",
+      "excerpts": [
+        "Seoul Metropolitan Government portal with living information and support for foreign residents.",
+        "Seoul Global Centers offer in-person counseling and community programs."
+      ],
+      "languages": ["en", "ko", "zh", "other"],
+      "escalation_contact": "Seoul Dasan Call Center 120 (interpretation available) for Seoul residents",
+      "last_checked": "2026-11-13"
+    }
+  ]
+}

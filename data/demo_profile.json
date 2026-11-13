@@ -1,0 +1,13 @@
+{
+  "_note": "SYNTHETIC DEMO DATA — not a real person. Used only to demonstrate the app.",
+  "is_demo": true,
+  "name": "Demo User (synthetic)",
+  "language": "en",
+  "resident_type": "employee",
+  "city": "Seoul",
+  "residence_category": "E-7 (example only — not verified for this synthetic user)",
+  "important_dates": [
+    {"label": "Residence card expiry (example)", "date": "2027-03-15"},
+    {"label": "Apartment lease renewal (example)", "date": "2026-12-20"}
+  ]
+}
